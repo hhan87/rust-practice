@@ -1,3 +1,4 @@
+use std::io;
 fn main() {
     println!("Hello, world! This is my rust pracice.");
     first();
@@ -38,4 +39,26 @@ fn second(){
 fn third(){
     let guess: u16 = "42".parse().expect("Not a number!");
     println!("Guess : {}", guess);
+
+    let tup : (i16, f64, u8) = (500, 6.4, 1);
+    let (x,y,z) = tup;
+    println!("The value of y is : {y}");
+
+    let x: (i16, f64, u8) = (500, 6.4, 1);
+    let five_hundred = x.0;
+    let six_point_four = x.1;
+    let one = x.2;
+
+    let arr = [1,2,3,4,5];
+    println!("plz enter an array index.");
+    let mut index = String::new();
+    io::stdin()
+        .read_line(&mut index)
+        .expect("failed to read");
+
+    let index: usize = index.trim().parse().expect("Index entered was not a number");
+
+    let element = arr[index];
+    println!("value of element at index {index} is : {element}");
+
 }
