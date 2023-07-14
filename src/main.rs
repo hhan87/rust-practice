@@ -2,6 +2,7 @@ fn main() {
     println!("Hello, world! This is my rust pracice.");
     first();
     second();
+    third();
 }
 
 fn first(){
@@ -32,4 +33,9 @@ fn second(){
     
     // let mut sspaces = "   ";
     // sspaces = spaces.len();
+}
+
+fn third(){
+    let guess: u16 = "42".parse().expect("Not a number!");
+    println!("Guess : {}", guess);
 }
