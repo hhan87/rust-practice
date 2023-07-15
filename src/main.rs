@@ -4,6 +4,7 @@ fn main() {
     first();
     second();
     third();
+    fourth(29)
 }
 
 fn first(){
@@ -61,4 +62,8 @@ fn third(){
     let element = arr[index];
     println!("value of element at index {index} is : {element}");
 
+}
+
+fn fourth(x : u32){
+    println!("x is {x}");
 }
