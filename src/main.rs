@@ -4,7 +4,9 @@ fn main() {
     first();
     second();
     third();
-    fourth(29)
+    fourth(29);
+    fifth();
+
 }
 
 fn first(){
@@ -66,4 +68,16 @@ fn third(){
 
 fn fourth(x : u32){
     println!("x is {x}");
+}
+
+fn fifth(){
+    let y = {
+        let x= 3;
+        x+1
+    };
+    println!("The value of y is : {y}, {}", five());
+
+}
+fn five() -> i32{
+    5
 }
