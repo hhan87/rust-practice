@@ -1,16 +1,39 @@
-use std::io;
 
 fn main() {
-    println!("Enter your weight (kg): ");
-    let mut input = String::new();
-
-    io::stdin().read_line(&mut input).unwrap();
-
-    let weight: f32 = input.trim().parse().unwrap();
-    let mars_weight = calculate_weight_on_mars(weight);
-    println!("Weight on Mars: {}kg", mars_weight);
+    let server = Server::new("127.0.0.1:8080".to_string());
+    server.run();
 }
 
-fn calculate_weight_on_mars(weight: f32) -> f32 {
-    (weight / 9.81) * 3.711
+struct Server {
+    addr: String,
+}
+
+impl Server {
+    fn new(addr: String) -> Server{
+        Server {
+            addr: addr
+        }
+    }
+    fn run(&self){
+        println!("Listening on {}", self.addr)
+    }
+}
+
+struct Request {
+    path: String,
+    query_string: Option<String>,
+    method: Method,
+}
+
+enum Method{
+    GET,
+    DELETE,
+    POST,
+    PUT,
+    HEAD,
+    CONNECT,
+    OPTIONS,
+    TRACE, 
+    PATCH,
+
 }
